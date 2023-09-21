@@ -10,6 +10,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/taylor-songs(Originals).csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/taylor-songs(WE).csv">
           <value>
             <Attribute>
