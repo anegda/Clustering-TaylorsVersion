@@ -1,0 +1,9 @@
+N.º Experimento,Data,N.º Clusters,Embeddings,Accuracy,Precision,F1 score
+1,All,10,Pretrained,,,
+2,All,20,Pretrained,,,
+3,All,10,Custome,,,
+4,All,20,Custome,,,
+5,Originals,10,Pretrained,,,
+6,Originals,20,Pretrained,,,
+7,Originals,10,Custome,,,
+8,Originals,20,Custome,,,
