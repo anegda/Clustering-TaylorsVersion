@@ -1,9 +1,9 @@
 N.º Experimento,Data,N.º Clusters,Embeddings,Accuracy,Precision,F1 score
-1,All,10,Pretrained,,,
-2,All,20,Pretrained,,,
-3,All,10,Custome,,,
-4,All,20,Custome,,,
-5,Originals,10,Pretrained,,,
-6,Originals,20,Pretrained,,,
-7,Originals,10,Custome,,,
-8,Originals,20,Custome,,,
+1,All,10,Pretrained,0.2474,0.5543,0.3104
+2,All,20,Pretrained,0.2887,0.4439,0.313
+3,All,10,Custome,0.2216,0.4960,0.2844
+4,All,20,Custome,0.2989,0.4700,0.3346
+5,Originals,10,Pretrained,0.2260,0.3599,0.26089
+6,Originals,20,Pretrained,0.2876,0.6369,0.3456
+7,Originals,10,Custome,0.2123,0.4466,0.2590
+8,Originals,20,Custome,0.2808,0.5321,0.3193

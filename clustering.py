@@ -3,6 +3,8 @@ from sklearn.cluster import KMeans
 import numpy as np
 import preproceso
 from sklearn.metrics import accuracy_score, f1_score, precision_score
+import scikitplot.metrics as skplt
+import matplotlib.pyplot as plt
 
 def label_to_album(cluster_labels, y):
     # Initializing
@@ -16,13 +18,13 @@ def label_to_album(cluster_labels, y):
         reference_labels[i] = num
     return reference_labels
 
-dfLyrics = pd.read_csv("taylor-songs.csv")
+dfLyrics = pd.read_csv("taylor-songs(Originals).csv")
 df = preproceso.preprocess(dfLyrics)
 X = df[["Lyrics_Embeddings"]]
 X = pd.DataFrame(X.Lyrics_Embeddings.tolist(), index=X.index)
 Y = np.array(df[["Album_num"]])
 
-kmeans = KMeans(n_clusters=10).fit(X)
+kmeans = KMeans(n_clusters=20, random_state=0).fit(X)
 labels = kmeans.predict(X)
 df['Cluster'] = labels
 cluster_album = label_to_album(labels, Y)
@@ -34,9 +36,14 @@ df['PredictedAlbum'] = album_labels
 print("La accuracy es:" , accuracy_score(album_labels,Y))
 print("La precision es:" , precision_score(album_labels,Y, average='weighted'))
 print("El f1 score es:" , f1_score(album_labels,Y, average='weighted'))
+skplt.plot_confusion_matrix(album_labels, Y)
+plt.xlabel("True label")
+plt.ylabel("Predicted label")
+plt.savefig('Results/confusionMatrix_exp6.png')
+plt.show()
 
 dfResultados = pd.DataFrame()
 dfResultados['Title'] = df['Title']
 dfResultados['Album'] = df['Album']
 dfResultados['PredictedAlbum'] = df['PredictedAlbum']
-dfResultados.to_csv("results.csv", index=False)
+#dfResultados.to_csv("Results/results_exp8.csv", index=False)
